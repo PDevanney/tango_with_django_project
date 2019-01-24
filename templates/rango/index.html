@@ -15,6 +15,8 @@
 			hey there partner!
 		</div>
 		
+		<h2>Most Liked Categories</h2>
+		
 		<div>
 			{% if categories %}
 			<ul>
@@ -30,6 +32,20 @@
 			{% endif %}
 		</div>
 		
+		<h2>Most Viewed Pages</h2>
+		
+		<div>
+			{% if views %}
+				<ul>
+				{% for view in views %}
+					<li><a href="{{ view.url }}">{{ view.title }}</a></li>
+				{% endfor %}
+				</ul>
+			{% else %}
+				<strong>No pages currently in category.</strong>
+			{% endif %}
+		</div>
+			
 		<div>			
 			<a href="/rango/about/">About Rango</a><br/>
 				<img src="{% static "images/rango.jpg" %}" alt="Picture of Rango" />
